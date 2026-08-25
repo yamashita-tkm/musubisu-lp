@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="その日にならないと分からない不安を、心のゆとりに変える。むすびすの無料事前相談をご案内します。">
+  <title>心のゆとりにつながる無料事前相談｜むすびす</title>
+  <style>
+    :root {
+      --ink: #263331;
+      --muted: #667471;
+      --green: #256b5f;
+      --green-dark: #174d44;
+      --green-pale: #edf6f2;
+      --cream: #faf7f0;
+      --line: #d9e3df;
+      --white: #fff;
+      --accent: #b56845;
+      --shadow: 0 14px 38px rgba(38, 51, 49, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      font-feature-settings: "palt" 1;
+      line-height: 1.85;
+    }
+    a { color: inherit; }
+    .section { padding: 88px 24px; }
+    .section--tint { background: var(--cream); }
+    .section--green { color: var(--white); background: var(--green-dark); }
+    .container { width: min(1080px, 100%); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-align: center;
+    }
+    .section--green .eyebrow { color: #b9ddd4; }
+    .heading {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      letter-spacing: .025em;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .lead { max-width: 720px; margin: 26px auto 0; color: var(--muted); text-align: center; }
+    .section--green .lead { color: #dce9e5; }
+
+    .change-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+    .change-card {
+      padding: 30px 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .change-card__num { color: var(--accent); font-family: Georgia, serif; font-size: 18px; font-style: italic; }
+    .change-card h3 { margin: 12px 0 10px; font-size: 20px; line-height: 1.55; }
+    .change-card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .change-card__after {
+      display: block;
+      margin-top: 18px;
+      padding-top: 16px;
+      color: var(--green);
+      border-top: 1px solid var(--line);
+      font-weight: 800;
+    }
+
+    .message {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 42px;
+      align-items: start;
+      margin-top: 54px;
+      padding: 42px;
+      background: var(--green-pale);
+      border-radius: 24px;
+    }
+    .message__label {
+      display: grid;
+      place-items: center;
+      width: 144px;
+      aspect-ratio: 1;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 50%;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 19px;
+      line-height: 1.55;
+      text-align: center;
+    }
+    .message h3 { margin: 0 0 14px; font-size: 25px; line-height: 1.55; }
+    .message p { margin: 0; color: var(--muted); }
+
+    .reason-list { display: grid; gap: 22px; max-width: 850px; margin: 50px auto 0; }
+    .reason {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 24px;
+      padding: 30px 34px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .reason__icon {
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 70px;
+      color: var(--green);
+      background: var(--green-pale);
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .reason h3 { margin: 0 0 8px; font-size: 21px; }
+    .reason p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .voices { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 48px; }
+    .voice { padding: 34px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; }
+    .voice__meta { margin: 0 0 14px; color: var(--green); font-size: 13px; font-weight: 800; }
+    .voice blockquote { margin: 0; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 19px; line-height: 1.8; }
+    .voice p { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+    .note { margin: 18px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; }
+    .step { position: relative; padding: 24px 26px; text-align: center; }
+    .step:not(:last-child)::after { content: "→"; position: absolute; top: 36px; right: -10px; color: #9bc2b8; font-size: 24px; }
+    .step__num { display: block; color: #b9ddd4; font-family: Georgia, serif; font-size: 30px; }
+    .step h3 { margin: 8px 0; font-size: 18px; }
+    .step p { margin: 0; color: #dce9e5; font-size: 14px; }
+
+    .cta { padding-top: 72px; padding-bottom: 110px; background: var(--green-pale); text-align: center; }
+    .cta__box { padding: 52px 28px; background: var(--white); border-radius: 26px; box-shadow: var(--shadow); }
+    .cta__copy { margin: 0; color: var(--green); font-weight: 800; }
+    .cta h2 { margin: 10px 0 14px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: clamp(27px, 4vw, 40px); line-height: 1.5; }
+    .cta__sub { margin: 0 auto 28px; color: var(--muted); }
+    .cta__buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 280px;
+      min-height: 58px;
+      padding: 14px 24px;
+      border: 2px solid var(--green);
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button:focus-visible { outline: 3px solid #e4a581; outline-offset: 3px; }
+    .button--primary { color: var(--white); background: var(--green); }
+    .button--secondary { color: var(--green); background: var(--white); }
+    .cta__fine { margin: 16px 0 0; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 760px) {
+      .section { padding: 64px 20px; }
+      .heading { font-size: 28px; text-align: left; }
+      .eyebrow, .lead { text-align: left; }
+      .change-grid, .voices, .steps { grid-template-columns: 1fr; }
+      .change-grid { margin-top: 34px; }
+      .message { grid-template-columns: 1fr; gap: 20px; padding: 28px 22px; }
+      .message__label { width: 110px; }
+      .reason { grid-template-columns: 56px 1fr; gap: 16px; padding: 24px 20px; }
+      .reason__icon { width: 54px; height: 54px; font-size: 21px; }
+      .reason h3 { font-size: 18px; }
+      .step { padding: 16px 8px 32px; text-align: left; }
+      .step:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: -6px; left: 10px; }
+      .button { width: 100%; min-width: 0; }
+      .cta { padding: 54px 20px 88px; }
+      .cta__box { padding: 38px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- 前半の「その日にならないと分からない」という悩み共感セクションの直後に配置 -->
+    <section class="section" aria-labelledby="consultation-benefit">
+      <div class="container">
+        <p class="eyebrow">FREE CONSULTATION</p>
+        <h1 class="heading" id="consultation-benefit">すべてを決めなくても、<br>知っておくだけで心にゆとりが生まれます。</h1>
+        <p class="lead">事前相談は、お葬式の内容を決めきるためのものではありません。分からないことを一つずつ整理し、その日を迎えたとき、ご家族が大切なお別れに向き合えるようにするための時間です。</p>
+
+        <div class="change-grid">
+          <article class="change-card">
+            <span class="change-card__num">01</span>
+            <h3>その日の流れが<br>見えてくる</h3>
+            <p>まず誰に連絡し、どのように進むのか。おおまかな流れを知ることで、漠然とした戸惑いを整理できます。</p>
+            <span class="change-card__after">「何をすれば？」が「まずはここから」に</span>
+          </article>
+          <article class="change-card">
+            <span class="change-card__num">02</span>
+            <h3>費用や選択肢を<br>自分たちのペースで知れる</h3>
+            <p>人数や希望によって何が変わるのか。必要なことを知りながら、ご家族に合う形をゆっくり考えられます。</p>
+            <span class="change-card__after">「いくらかかる？」が「この範囲なら」に</span>
+          </article>
+          <article class="change-card">
+            <span class="change-card__num">03</span>
+            <h3>大切にしたいことを<br>言葉にできる</h3>
+            <p>まだ具体的でなくても大丈夫です。ご本人やご家族の想いを話すことから、お別れの輪郭が見えてきます。</p>
+            <span class="change-card__after">「まだ分からない」が「これを大切に」に</span>
+          </article>
+        </div>
+
+        <div class="message">
+          <div class="message__label" aria-hidden="true">決めるより<br>話すことから</div>
+          <div>
+            <h3>相談したからといって、<br>今すぐ何かを決める必要はありません。</h3>
+            <p>「何を聞けばいいか分からない」「まだ家族とも話せていない」。そんな状態のままで構いません。いま抱えている疑問やお気持ちを伺いながら、必要な情報だけを一緒に整理します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="why-musubisu">
+      <div class="container">
+        <p class="eyebrow">WHY MUSUBISU</p>
+        <h2 class="heading" id="why-musubisu">事前相談といえば、むすびす。<br>気持ちを置き去りにしない相談を。</h2>
+        <p class="lead">答えを急ぐのではなく、ご家族のペースを大切にすること。むすびすは、相談する時間そのものが心のゆとりにつながるよう、一つひとつのお話に向き合います。</p>
+
+        <div class="reason-list">
+          <article class="reason">
+            <div class="reason__icon" aria-hidden="true">話</div>
+            <div>
+              <h3>分からないまま、話し始めて大丈夫</h3>
+              <p>質問を用意する必要はありません。状況やお気持ちを伺いながら、いま知っておくと安心できることを順番にご案内します。</p>
+            </div>
+          </article>
+          <article class="reason">
+            <div class="reason__icon" aria-hidden="true">無</div>
+            <div>
+              <h3>相談は無料。知るだけ、話すだけでも大丈夫</h3>
+              <p>費用を気にせず、気になったタイミングでご相談いただけます。相談したその場で、内容や依頼先を決める必要はありません。</p>
+            </div>
+          </article>
+          <article class="reason">
+            <div class="reason__icon" aria-hidden="true">想</div>
+            <div>
+              <h3>ご本人とご家族、それぞれの想いを大切に</h3>
+              <p>形式やプランから決めるのではなく、どんな時間を大切にしたいかを伺い、そのご家族らしい選択肢を一緒に考えます。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="voices">
+      <div class="container">
+        <p class="eyebrow">VOICE</p>
+        <h2 class="heading" id="voices">話してみたら、<br>気持ちが少し軽くなりました。</h2>
+        <div class="voices">
+          <article class="voice">
+            <p class="voice__meta">ご家族からのご相談</p>
+            <blockquote>「まだ何も決まっていない」と伝えたら、まずは気になっていることから聞いてくれました。</blockquote>
+            <p>流れや費用の考え方が分かり、家族で話すきっかけもできました。</p>
+          </article>
+          <article class="voice">
+            <p class="voice__meta">ご本人からのご相談</p>
+            <blockquote>決めるためではなく、知っておくために相談。これで家族も迷わずに済むと思うと、ほっとしました。</blockquote>
+            <p>自分が大切にしたいことを、少しずつ言葉にできました。</p>
+          </article>
+        </div>
+        <p class="note">※上記は構成確認用のサンプルです。公開時は、許諾を得た実際のお客様の声へ差し替えてください。</p>
+      </div>
+    </section>
+
+    <section class="section section--green" aria-labelledby="consultation-flow">
+      <div class="container">
+        <p class="eyebrow">HOW TO CONSULT</p>
+        <h2 class="heading" id="consultation-flow">相談は、気になったことを<br>話すところから。</h2>
+        <p class="lead">準備や専門知識は必要ありません。ご相談の内容がまとまっていなくても大丈夫です。</p>
+        <div class="steps">
+          <article class="step">
+            <span class="step__num">01</span>
+            <h3>相談方法を選ぶ</h3>
+            <p>ご都合に合う方法からお問い合わせください。</p>
+          </article>
+          <article class="step">
+            <span class="step__num">02</span>
+            <h3>いまの気持ちを話す</h3>
+            <p>決まっていないことも、そのままお聞かせください。</p>
+          </article>
+          <article class="step">
+            <span class="step__num">03</span>
+            <h3>必要なことだけ知る</h3>
+            <p>疑問を整理し、ご家族のペースで持ち帰れます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta__box">
+          <p class="cta__copy">決めなくて大丈夫。まずは、話してみるだけ。</p>
+          <h2 id="cta-title">心のゆとりをつくる、<br>むすびすの無料相談。</h2>
+          <p class="cta__sub">「その日」のために、今日できることを少しだけ。</p>
+          <div class="cta__buttons">
+            <a class="button button--primary" href="#contact">無料で相談してみる</a>
+            <a class="button button--secondary" href="#document">まずは資料で知る</a>
+          </div>
+          <p class="cta__fine">ご相談内容がまとまっていなくても構いません。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
